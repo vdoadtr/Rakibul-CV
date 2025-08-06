@@ -1,1 +1,347 @@
-# Rakibul-CV
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakibul Malithya - Video Editor & Motion Graphics Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Teko:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Slate (Cool Gray) with an Amber accent. -->
+    <!-- Application Structure Plan: A single-page application (SPA) with a top navigation bar for smooth scrolling to different sections. The structure is designed to guide the user through a narrative: starting with a strong visual introduction (Hero), moving to skills and experience presented visually (Skills Chart, Experience Timeline), and ending with education and contact details. This non-linear but guided approach is more engaging than a traditional paper CV and allows recruiters to quickly jump to the information they need most. -->
+    <!-- Visualization & Content Choices:
+        - Hero Section: Report Info (Name, Title, Photo) -> Goal (Immediate Introduction) -> Viz/Presentation (Large typography, professional photo) -> Interaction (Contact links) -> Justification (Creates a strong, professional first impression).
+        - Skills: Report Info (List of skills) -> Goal (Quantify proficiency) -> Viz/Presentation (Horizontal Bar Chart) -> Interaction (Tooltips on hover show proficiency) -> Justification (Visually more appealing and easier to scan than a text list) -> Library/Method (Chart.js).
+        - Experience: Report Info (Job history) -> Goal (Show career progression) -> Viz/Presentation (Vertical Timeline) -> Interaction (None, focus on clarity) -> Justification (A timeline is a natural and intuitive way to represent work history chronologically) -> Library/Method (HTML/Tailwind CSS).
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        h1, h2, h3 {
+            font-family: 'Teko', sans-serif;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            background-color: #f1f5f9; /* slate-100 */
+            border: 4px solid #f59e0b; /* amber-500 */
+            left: -0.625rem;
+            top: 0;
+            z-index: 10;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-slate-800 font-family-teko">RAKIBUL M.</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-slate-600 hover:text-amber-500 transition-colors duration-300">About</a>
+                <a href="#skills" class="text-slate-600 hover:text-amber-500 transition-colors duration-300">Skills</a>
+                <a href="#experience" class="text-slate-600 hover:text-amber-500 transition-colors duration-300">Experience</a>
+                <a href="#education" class="text-slate-600 hover:text-amber-500 transition-colors duration-300">Education</a>
+            </div>
+            <a href="mailto:vdoadtr@gmail.com" class="hidden md:block bg-amber-500 text-white py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors duration-300">Contact Me</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6">
+
+        <!-- Hero Section -->
+        <section id="hero" class="py-20 md:py-32 text-center md:text-left">
+            <div class="grid md:grid-cols-3 items-center gap-8">
+                <div class="md:col-span-2">
+                    <h1 class="text-5xl md:text-7xl font-bold text-slate-800 tracking-wide uppercase">Rakibul Malithya</h1>
+                    <h2 class="text-3xl md:text-4xl text-amber-500 mt-2">Video Editor & Motion Graphics Designer</h2>
+                    <p class="mt-6 max-w-2xl mx-auto md:mx-0 text-slate-600">
+                        A creative and experienced professional transforming concepts into compelling visual stories. Based in Kolkata, available for new opportunities.
+                    </p>
+                    <div class="mt-8 flex justify-center md:justify-start gap-4">
+                        <a href="mailto:vdoadtr@gmail.com" class="bg-slate-800 text-white py-3 px-6 rounded-lg hover:bg-slate-900 transition-colors duration-300">Get In Touch</a>
+                        <a href="tel:9531661985" class="bg-slate-200 text-slate-800 py-3 px-6 rounded-lg hover:bg-slate-300 transition-colors duration-300">Call Me</a>
+                    </div>
+                </div>
+                <div class="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
+                     <!-- এখানে তোমার ছবির সরাসরি লিঙ্ক বসানো হয়েছে -->
+                     <img src="https://live.staticflickr.com/65535/54703483280_a75be6ae44_b.jpg"
+                         onerror="this.onerror=null;this.src='https://placehold.co/300x300/e2e8f0/334155?text=R.M.';"
+                         alt="Rakibul Malithya"
+                         class="rounded-full object-cover w-full h-full shadow-lg border-4 border-white">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20">
+             <h2 class="text-4xl md:text-5xl font-bold text-center text-slate-800 uppercase">Objective</h2>
+             <div class="mt-8 max-w-3xl mx-auto text-center bg-white p-8 rounded-lg shadow-md">
+                <p class="text-lg text-slate-600">
+                    I am a creative and experienced Video Editor and Motion Graphics Designer seeking to join a reputable organization. I am confident in utilizing my skills and creativity to contribute significantly to the company's progress. My goal is to leverage my technical expertise and artistic vision to produce high-quality content that engages and inspires audiences.
+                </p>
+                <button id="generateObjectiveBtn" class="bg-amber-500 text-white py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors duration-300 mt-4 flex items-center justify-center mx-auto">
+                    ✨ Generate AI Objective
+                </button>
+             </div>
+             <div id="aiObjectiveOutput" class="mt-4 max-w-3xl mx-auto text-center bg-white p-8 rounded-lg shadow-md hidden">
+                <p class="text-lg text-slate-600" id="generatedObjectiveText"></p>
+                <div id="objectiveLoadingSpinner" class="hidden mt-4">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-500 mx-auto"></div>
+                    <p class="text-slate-500 mt-2">Generating...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-slate-100 rounded-lg">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-slate-800 uppercase">Technical Skills</h2>
+            <p class="text-center mt-4 text-slate-600 max-w-2xl mx-auto">This chart represents my proficiency in various tools and techniques essential for modern video production and design. Hover over the bars to see my self-assessed skill level.</p>
+            <div class="mt-12">
+                <div class="chart-container">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-slate-800 uppercase">Professional Experience</h2>
+            <p class="text-center mt-4 text-slate-600 max-w-2xl mx-auto">Here is a timeline of my professional journey, highlighting my roles and responsibilities in different organizations. This section showcases my growth and the practical application of my skills over the years.</p>
+            <div class="mt-16 max-w-3xl mx-auto">
+                <div class="relative border-l-2 border-slate-200 pl-10 space-y-16">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <h3 class="text-2xl font-bold text-slate-800">Video Editor</h3>
+                        <p class="text-amber-600 font-semibold">Tara TV</p>
+                        <p class="text-sm text-slate-500 mb-2">June 2024 - November 2024 (6 months)</p>
+                        <p class="text-slate-600">Edited video content for broadcast, ensuring high quality and adherence to channel standards. Collaborated with producers to bring creative concepts to life.</p>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item">
+                        <h3 class="text-2xl font-bold text-slate-800">Video Editor</h3>
+                        <p class="text-amber-600 font-semibold">TDN Bangla</p>
+                        <p class="text-sm text-slate-500 mb-2">November 2022 - April 2024 (1.5 years)</p>
+                        <p class="text-slate-600">Responsible for editing a wide range of video content for a digital news platform, including news packages, interviews, and promotional materials. Worked under tight deadlines to deliver timely content.</p>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item">
+                        <h3 class="text-2xl font-bold text-slate-800">Computer Teacher</h3>
+                        <p class="text-amber-600 font-semibold">Itahar Al-amin Mission</p>
+                        <p class="text-sm text-slate-500 mb-2">March 2025 - May 2025 (3 months)</p>
+                        <p class="text-slate-600">Instructed students on fundamental computer skills, including an introduction to video editing and graphic design software, fostering an interest in digital media.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 bg-slate-100 rounded-lg">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-slate-800 uppercase">Education</h2>
+            <p class="text-center mt-4 text-slate-600 max-w-2xl mx-auto">My academic background provided the foundational knowledge for my career in media and journalism.</p>
+            <div class="mt-12 max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                <div class="mb-8">
+                    <h3 class="text-3xl font-bold text-slate-800">Derozio Memorial College</h3>
+                    <p class="text-xl text-amber-600 mt-2">B.Voc in Broadcast Journalism</p>
+                    <p class="text-slate-500 mt-1">(2022 - 2025)</p>
+                    <p class="text-slate-600 mt-3">Acquired comprehensive knowledge in journalism tools including research, fact-checking, news writing, storytelling, cinematic sense, camera operation, video editing, graphic design, etc.</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-slate-800">Panditpur Samseriya High Madrasah</h3>
+                    <p class="text-xl text-amber-600 mt-2">Higher Secondary Education</p>
+                    <p class="text-slate-500 mt-1">(2022)</p>
+                    <p class="text-slate-600 mt-3">Subjects: Bengali, English, Philosophy, Political Science, Education Science, History.</p>
+                    <p class="text-xl text-amber-600 mt-4">Secondary Education</p>
+                    <p class="text-slate-500 mt-1">(2017)</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300 mt-20">
+        <div class="container mx-auto px-6 py-10 text-center">
+            <h3 class="text-3xl font-bold text-white">Let's Create Something Amazing</h3>
+            <p class="mt-4 max-w-xl mx-auto">I'm currently available for freelance projects or full-time opportunities. Feel free to reach out.</p>
+            <div class="mt-6">
+                <p class="text-lg"><strong>Email:</strong> <a href="mailto:vdoadtr@gmail.com" class="text-amber-400 hover:underline">vdoadtr@gmail.com</a></p>
+                <p class="text-lg mt-2"><strong>Phone:</strong> <a href="tel:9531661985" class="text-amber-400 hover:underline">9531661985</a></p>
+                <p class="text-lg mt-2"><strong>Location:</strong> Kolkata, Rajarhat New Town</p>
+            <div class="mt-8 border-t border-slate-700 pt-6">
+                <p>&copy; <span id="year"></span> Rakibul Malithya. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const skillsData = {
+            labels: [
+                'Premier Pro (Editing)',
+                'Color Grading',
+                'After Effects (Motion Graphics)',
+                'Photoshop (Graphics & Matte Painting)',
+                'Audio Editing & Sound Design',
+                'Camera Operation & Theory',
+                'Advanced Techniques (Tracking, Rotoscope)'
+            ],
+            datasets: [{
+                label: 'Proficiency Level',
+                data: [90, 85, 85, 88, 80, 92, 78], // Adjusted data to match new label count
+                backgroundColor: 'rgba(245, 158, 11, 0.2)', // amber-500 with alpha
+                borderColor: 'rgba(245, 158, 11, 1)', // amber-500
+                borderWidth: 2,
+                borderRadius: 4,
+                borderSkipped: false,
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: skillsData,
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#0f172a', // slate-900
+                        titleFont: {
+                            size: 16,
+                            family: 'Teko, sans-serif'
+                        },
+                        bodyFont: {
+                            size: 14,
+                            family: 'Inter, sans-serif'
+                        },
+                        padding: 12,
+                        cornerRadius: 6,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.x !== null) {
+                                    label += context.parsed.x + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: {
+                            color: 'rgba(203, 213, 225, 0.3)' // slate-300 with alpha
+                        },
+                        ticks: {
+                            color: '#475569', // slate-600
+                            font: {
+                                family: 'Inter',
+                                size: 12
+                            },
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#334155', // slate-700
+                             font: {
+                                size: 14,
+                                weight: '500',
+                                family: 'Inter',
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const skillsChart = new Chart(
+            document.getElementById('skillsChart'),
+            config
+        );
+
+        const generateObjectiveBtn = document.getElementById('generateObjectiveBtn');
+        const aiObjectiveOutput = document.getElementById('aiObjectiveOutput');
+        const generatedObjectiveText = document.getElementById('generatedObjectiveText');
+        const objectiveLoadingSpinner = document.getElementById('objectiveLoadingSpinner');
+
+        generateObjectiveBtn.addEventListener('click', async () => {
+            aiObjectiveOutput.classList.remove('hidden');
+            objectiveLoadingSpinner.classList.remove('hidden');
+            generatedObjectiveText.textContent = ''; // Clear previous text
+
+            const skills = skillsData.labels.join(', ');
+            const experienceSummary = `Video Editor at Tara TV (June 2024 - November 2024), Video Editor at TDN Bangla (November 2022 - April 2024), and Computer Teacher at Itahar Al-amin Mission (March 2025 - May 2025).`;
+
+            const prompt = `As an expert career coach, generate a concise, impactful, and professional objective statement for a resume. The candidate is a Video Editor and Motion Graphics Designer with the following key skills: ${skills}. Their professional experience includes: ${experienceSummary}. Focus on their creative and technical abilities in video editing, motion graphics, and their aspiration to contribute to a reputable organization.`;
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    generatedObjectiveText.textContent = text;
+                } else {
+                    generatedObjectiveText.textContent = 'Could not generate objective. Please try again.';
+                    console.error('Unexpected API response structure:', result);
+                }
+            } catch (error) {
+                generatedObjectiveText.textContent = 'Error generating objective. Please check your network connection.';
+                console.error('Error fetching from Gemini API:', error);
+            } finally {
+                objectiveLoadingSpinner.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
