@@ -17,6 +17,21 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        /* Custom CSS for the glowing effect on the button */
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6;
+            }
+            50% {
+                box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6;
+            }
+            100% {
+                box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6;
+            }
+        }
+        .glow-button {
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex items-center justify-center p-4 sm:p-8">
@@ -169,7 +184,7 @@
                 <p class="text-gray-700 leading-relaxed mb-6">
                     Interested in my creative projects? Click the button below to visit my portfolio website and see more of my work.
                 </p>
-                <a href="https://vdoadtr.github.io/Portfolio-VDOADTR/" target="_blank" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-bold shadow-md hover:bg-blue-700 transition-colors duration-300">
+                <a href="https://vdoadtr.github.io/Portfolio-VDOADTR/" target="_blank" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-bold shadow-md hover:bg-blue-700 transition-colors duration-300 glow-button">
                     Visit Portfolio Website
                 </a>
             </section>
