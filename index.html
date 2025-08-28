@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Website title visible in the browser tab -->
-    <title>Rakibul's Personal Website</title>
+    <!-- The user requested "VDOADTR CV" as the title -->
+    <title>VDOADTR CV</title>
+    <!-- Favicon as requested by the user -->
+    <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczPX0sCcMMwD8I5-REdo-keNM5TZU_HBKxEyV0chdP7f9xPpS_JDxkBEmoYxk7H42DF7Vcdl7oOnSjjiDg1K0W7DrORhQtFWWnQQDKdY3vn9wUncS9UG1zTFarY7M3HQDfuMeTJt22qoIEOrImTck23L=w945-h945-s-no-gm?authuser=0" type="image/x-icon">
     <!-- Google Fonts for a modern, clean look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +35,13 @@
         .glow-button {
             animation: glow 1.5s ease-in-out infinite alternate;
         }
+        /* Custom CSS for the text gradient effect as requested by the user */
+        .vdo-gradient {
+            background: linear-gradient(to bottom, #1d4ed8, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900 min-h-screen flex items-center justify-center p-4 sm:p-8">
@@ -39,8 +49,9 @@
     <!-- Main container for the website content -->
     <div class="bg-white rounded-3xl shadow-xl overflow-hidden max-w-4xl w-full p-6 sm:p-10">
         
-        <!-- Header Section -->
-        <header class="text-center mb-10">
+        <!-- Header Section with a dark background to make the white text pop -->
+        <!-- User requested a lighter dark background and a drop shadow on the text -->
+        <header class="text-center mb-10 bg-gray-800 p-8 rounded-2xl shadow-xl">
             <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full mx-auto mb-4 bg-gray-200 flex items-center justify-center overflow-hidden">
                 <!-- Profile picture based on your uploaded CV -->
                 <img 
@@ -50,8 +61,13 @@
                     onerror="this.src='https://placehold.co/192x192/4B5563/FFFFFF?text=R'"
                 />
             </div>
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-blue-600 mb-2">Rakibul Malithya</h1>
-            <p class="text-lg sm:text-xl font-medium text-gray-600">Video Editor and Creative Professional</p>
+            <!-- Heading with custom gradient, text colors, and a new drop shadow -->
+            <h1 class="text-2xl sm:text-5xl font-extrabold mb-2 drop-shadow-lg">
+                <span class="vdo-gradient">VDO</span>
+                <span class="text-white">ADTR</span>
+            </h1>
+            <h2 class="text-xl sm:text-4xl font-extrabold text-white mb-2">Rakibul Malithya</h2>
+            <p class="text-lg sm:text-xl font-medium text-gray-400">Video Editor and Creative Professional</p>
         </header>
 
         <!-- Main Content Section -->
@@ -60,7 +76,7 @@
             <section class="bg-gray-50 p-6 rounded-2xl shadow-sm">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">About Me</h2>
                 <p class="text-gray-700 leading-relaxed">
-                    I am an experienced video editor and creative professional. In addition to video editing, I have a clear understanding of cooking and camera fundamentals.
+                    I am a highly skilled video editor with a passion for storytelling and visual creativity. My expertise spans various areas including crafting compelling short films, creating dynamic motion graphics, and mastering sound design and color grading to bring projects to life. I also possess a deep understanding of camera fundamentals such as exposure, shutter speed, ISO, focal length, and various shot angles, allowing me to approach every project with a comprehensive creative vision.
                 </p>
             </section>
 
@@ -85,7 +101,7 @@
                              <!-- Itahar Al-Amin Mission Logo -->
                              <img src="https://scontent.fccu3-1.fna.fbcdn.net/v/t39.30808-6/242684800_1513395515684258_6706339316110454082_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=vx0yz0u3hfAQ7kNvwFwJ6p8&_nc_oc=Adm2rvTZQoOUcLUXErJiavxvSAXe7GQFQsJM-hsbyGirFVOuDN4Jic1v_nhIYvO82wU&_nc_zt=23&_nc_ht=scontent.fccu3-1.fna&_nc_gid=voLqCzvIKg0ojc_w19k4pw&oh=00_AfUSTMX8bvrUL9gwEWw1PupKhkH0LoRI4G2fcQRqSaF5pw&oe=68B48D99" alt="Itahar Al-Amin Mission Logo" class="w-8 h-8 rounded-full mr-3">
                              <!-- Make company name clickable -->
-                             <a href="https://www.facebook.com/profile.php?id=100010414724272" target="_blank" class="text-lg font-semibold text-gray-900 hover:text-blue-600 hover:underline">Ehtaharu Al-Amin Mission</a>
+                             <a href="https://www.facebook.com/profile.php?id=100010414724272" target="_blank" class="text-lg font-semibold text-gray-900 hover:text-blue-600 hover:underline">Itahar Al-amin Mission</a>
                         </div>
                         <p class="text-gray-600">Computer Teacher</p>
                         <p class="text-sm text-gray-500 mt-1">March 2025 - May 2025 (3 Months)</p>
@@ -195,13 +211,14 @@
                 <p class="text-gray-700 leading-relaxed">
                     If you are interested in working on a project or would just like to talk, please feel free to contact me.
                 </p>
-                <div class="mt-4 text-center space-y-4">
+                <!-- Flexbox container to make buttons appear in a row on all screen sizes -->
+                <div class="mt-4 text-center flex justify-center items-center gap-4">
                     <!-- Email link with correct address -->
                     <a href="mailto:vdoadtr@gmail.com" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-bold shadow-md hover:bg-blue-700 transition-colors duration-300">
                         Send Email
                     </a>
                     <!-- Phone number with correct link -->
-                    <a href="tel:9531661985" class="inline-block bg-green-600 text-white px-6 py-3 rounded-full font-bold shadow-md hover:bg-green-700 transition-colors duration-300 ml-4">
+                    <a href="tel:9531661985" class="inline-block bg-green-600 text-white px-6 py-3 rounded-full font-bold shadow-md hover:bg-green-700 transition-colors duration-300">
                         Call Me
                     </a>
                 </div>
